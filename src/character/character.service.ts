@@ -18,6 +18,7 @@ export class CharacterService {
     }
     async addCharacter(CreateCharacterDTO: CreateCharacterDTO): Promise<Character>{
         const newCharacter = await new this.characterModel(CreateCharacterDTO);
+        newCharacter.img
         return newCharacter.save();
     }
     async updateCharacter(characterID, CreateCharacterDTO: CreateCharacterDTO): Promise<Character> {
